@@ -92,10 +92,10 @@ Challenging, very challenging step and I have a very vague idea of the concept. 
 I did not spend that much time on this section. I relied on Bootstrap classes. 
 
 #### Step-7
-I deployed my work on Heroku.
+Finally I deployed it on Heroku. I made some mistakes initially which takes a lot of mine. Very tedious...!
 
 #### Step-8
-And here I go. I am about to be done. Working on the README file. I was assigned this project at midnight on 12th December(This day is recognized as "Digitial Bangladesh Day". Interesting...!). I started working on it on the morning of 13th December. But unfortunately, The electric supply was interrupted for the whole day here in Gazipur (Joydebpur) on that day. So I had to start it in the evening. And now I am all set to submit it at 8 PM on 14th December.
+And here I go. I am about to be done. Working on the README file. I was assigned this project at midnight on 12th December(This day is recognized as "Digitial Bangladesh Day". Interesting...!). I started working on it on the morning of 13th December. But unfortunately, The electric supply was interrupted for the whole day here in Gazipur (Joydebpur) on that day. So I had to start it in the evening. And now I am all set to submit it at 12.30 AM on 14th December.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
