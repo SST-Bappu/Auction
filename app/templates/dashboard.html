@@ -1,0 +1,50 @@
+{%extends 'main.html'%}
+{%block title%}Dashboard{%endblock%}
+
+
+{%block content%}
+
+<br>
+<div class="row d-flex justify-content-center">
+
+    
+    <div class="col-md-10 dashdv">
+        <div class="card bg-dark text-white">
+            <div class="card-header">
+                <h4>Auctions</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover table-striped table-dark">
+                    <tr>
+                        <th>Auction</th>
+                        <th>Minimum Bid</th>
+                        <th>Photo</th>
+                        <th>Deadline</th>
+                    <th>Actions</th>
+                </tr>
+                {% for auction in auctions%}
+                <tr>
+                    <td>{{auction.product_name}}</td>
+                    <td>{{auction.min_bid}}</td>
+                    <td>
+                        <img class="thumbnail" src="{{auction.imageURL}}" alt="{{auction.product_name}}" width="100" height="100">
+                        </img>
+                    </td>
+                    <td>{{auction.end_date}}</td>
+                    <td><a class="btn btn-sm btn-info" href="{%url 'bid' auction.id%}">View</a></td>
+                    
+                </tr>
+                {%endfor%}
+            </table>
+            
+        </div>
+        <div class="card-footer text-right" style="padding-right: 20px;">
+            <a class="btn btn-success" href="{%url 'addauction'%}">Create</a>
+        </div>
+    </div>
+    
+    </div>
+</div>
+
+
+{%endblock%}

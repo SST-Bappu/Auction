@@ -1,0 +1,26 @@
+#logo{
+
+}
+body{
+    background-color: #ebeff5;
+}
+#total-orders{
+    background-color: #4cb4c7;
+}
+#orders-delivered{
+    background-color: #7abecc;
+}
+#orders-pending{
+    background-color: #7cd1c0;
+}
+h3,h5{
+    color: #fff;
+}
+
+.thumbnail{
+	/* width: 10px;
+	height: 10px; */
+	/* -webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+    -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1); */
+    box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+}

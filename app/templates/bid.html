@@ -1,0 +1,84 @@
+{%extends 'main.html'%}
+{%block title%}Bid{%endblock%}
+
+{%block content%}
+
+<br>
+
+<!-- 
+<div class="col-md-12"> -->
+    <div class="card text-white bg-dark text-center">
+        <div class="card-body">
+            <h2 class="card-title">Max Bid = {{max_bid}}</h2>
+            <table class="table table-hover table-striped table-dark">
+                <tr>
+                    <th>Auction</th>
+                    <th>Minimum Bid</th>
+                    <th>Photo</th>
+                    <th>Deadline</th>
+                </tr>
+                <tr>
+                    <td>{{auction.product_name}}</td>
+                    <td>{{auction.min_bid}}</td>
+                    <td><img class="thumbnail" src="{{auction.imageURL}}" alt="{{auction.product_name}}" width="100" height="100">
+                    </img></td>
+                    <td>{{auction.end_date}}</td>
+                    
+                </tr>
+
+            </table>
+        </div>
+        <div class="card-footer border-dark text-right">
+            <div class="float-right">
+                {%if diff %}
+                <form class="form-inline" method="POST" action="">
+                    {%csrf_token%}
+                    <div class="form-group mx-sm-3 mb-2 float-right">
+                        {%if userbid%}
+                        <input type="text" class="form-control" id="bid" name="bid" value="{{userbid}}">
+                        {%else%}
+                        <input type="text" class="form-control" id="bid" name="bid" placeholder="bid...">
+                        {%endif%}
+                    </div>
+                    {%if userbid%}
+                        <button type="submit" class="btn btn-success mb-2">Edit Bid</button>
+                    {%else%}
+                        <button type="submit" class="btn btn-success mb-2">Confirm Bid</button>
+                    {%endif%}
+                </form>
+                {%else%}
+                    <h3 style="color: white;">Bid winner is {{auction.bid_winner}}</h3>
+                {%endif%}
+            </div>
+            <!-- <a class="btn btn-success text-right" href="{%url 'addauction'%}">Create</a> -->
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-md-6 ">
+            <div class="card bg-dark text-white">
+                <div class="card-header">
+                    <h4>Bids</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover table-striped table-dark">
+                        <tr>
+                            <th>User</th>
+                            <th>Bid</th>
+                    </tr>
+                    {% for bid in all_bids%}
+                    <tr>
+                        <td>{{bid.user.email}}</td>
+                        <td>{{bid.bid_price}}</td>                        
+                    </tr>
+                    {%endfor%}
+                </table>
+                
+            </div>
+<!-- </div> -->
+
+
+{%endblock%}

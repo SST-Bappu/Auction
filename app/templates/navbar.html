@@ -1,0 +1,30 @@
+{%load static%}
+<style>
+  .user-msg{
+    font-size: 18px;
+    color:#fff;
+    margin-right: 20px;
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <img src="{%static 'images/logo1.png'%}" height="10%" width="10%"> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        {%if request.user.is_staff %}
+          <a class="nav-item nav-link active" href="{%url 'admin_dash'%}">Dashboard <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="{%url 'home'%}">Auctions</a>
+        {%elif chk%}
+          <a class="nav-item nav-link active" href="{%url 'userauction'%}">My Auctions</a>
+        {%else%}
+          <a class="nav-item nav-link active" href="{%url 'home'%}">Home</a>
+        {%endif%}
+      </div>
+    </div>
+    
+    <span class="user-msg">{{request.user}}</span>
+    <span><a class="user-msg btn btn-outline-danger" href="{% url 'logout' %}">Logout</a></span>
+  </nav>
