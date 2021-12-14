@@ -26,7 +26,7 @@ SECRET_KEY = 'tw3-_l2&#(%*=kkfuaq8si=h4#oln&qxmvk0rp90!u$s+*^3#+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','sattasundarauctions.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','sstauctions.herokuapp.com']
 
 
 # Application definition
