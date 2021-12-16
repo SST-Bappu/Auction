@@ -14,6 +14,8 @@ def userlogin(request):
     if request.POST:
         users = get_user_model()
         usermail = request.POST.get('username')
+        if not usermail:
+            return redirect('login')
         user, created = users.objects.get_or_create(email = usermail)
         login(request,user)
         if user.is_staff == True:
