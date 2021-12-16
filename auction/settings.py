@@ -24,10 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'tw3-_l2&#(%*=kkfuaq8si=h4#oln&qxmvk0rp90!u$s+*^3#+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','sstauctions.herokuapp.com']
+DEBUG = True
 
+# ALLOWED_HOSTS = ['127.0.0.1','sstauctions.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -137,6 +138,7 @@ USE_TZ = True
 
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+# STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
 STATICFILES_DIRS = [

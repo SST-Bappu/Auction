@@ -74,7 +74,9 @@ The instruction given in each step is very much conceptual here. Anyone without 
 
 #### Step-1
 Basically, Django has a built-in user model which takes a name as its username and required field. But here I am told to let the user sign in with user mail without any registration. So I had to override the Django default user model to make the user mail as its username and to let the user sign in without any password as well. 
-
+##### Problem I faced and how I recovered--
+I figured out a problem, when a logged in user goes to the login page it flags a csrf verification problem. 
+So to overcome this I wrote a wrapper function so that wheneve a logged-in user come to the login page again he will be automatically redirected to the home page.  
 #### Step-2
 Here I just retrieve all the auctions from the database and view them on the user end. There are two different dashboards. One shows all the auctions and the other filters the auctions posted by the logged-in user only.
 ##### Packages: Pillow (To upload photo)

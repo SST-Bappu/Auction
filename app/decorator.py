@@ -3,6 +3,8 @@ from django.shortcuts import redirect
 def unauthenticated_user(view_func):
     def wrapper_func(request,*args,**kwargs):
         if request.user.is_authenticated:
+            if request.user.is_staff == True:
+                return redirect('admin_dash')
             return redirect('home')
         else:
             return view_func(request,*args,**kwargs)

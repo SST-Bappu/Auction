@@ -2,7 +2,7 @@ from os import system
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model, login, logout
-from datetime import datetime,time
+from datetime import datetime,time, timedelta
 
 from .decorator import *
 from .form import *
@@ -16,6 +16,8 @@ def userlogin(request):
         usermail = request.POST.get('username')
         user, created = users.objects.get_or_create(email = usermail)
         login(request,user)
+        if user.is_staff == True:
+            return redirect('admin_dash')
         return redirect('home')
     return render(request,'login.html')
 
@@ -99,11 +101,15 @@ def bid(request,id):
     except:
         userbid=None
     today = datetime.now()
+    today = today-timedelta(days=1)
     end_date = str(auction.end_date)
     date = str(today.strftime("%Y-%m-%d"))
     date = datetime.strptime(date,'%Y-%m-%d')
     end_date = datetime.strptime(end_date,'%Y-%m-%d')
     diff = end_date-date
+    print(date)
+    print(end_date)
+    print(diff)
     if diff.seconds>0 or diff.days>0:
         diff = True
     else:
